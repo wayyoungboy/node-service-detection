@@ -1,10 +1,12 @@
-package com.wayyoung.nodeservicedetection.bean;
+package com.wayyoung.nodeservicedetection.bean.VO;
 
+import com.wayyoung.nodeservicedetection.bean.NodeServiceBean;
 import lombok.Data;
 
 import java.util.List;
+
 @Data
-public class NodeBean {
+public class NodeVO {
     private long id;
 
     /**
@@ -20,8 +22,8 @@ public class NodeBean {
     /**
      * 节点所包含的服务
      */
-    private List<NodeServiceBean> nodeStatus;
-   // private List<NodeServiceBean> services;
+    private List<NodeServiceVO> nodeStatus;
+    // private List<NodeServiceBean> services;
     /**
      * 最近注册时间
      */
@@ -34,5 +36,4 @@ public class NodeBean {
      */
 
     private long livecycle;
-
 }

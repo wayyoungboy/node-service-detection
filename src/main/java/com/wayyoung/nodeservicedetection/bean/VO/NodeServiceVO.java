@@ -1,9 +1,9 @@
-package com.wayyoung.nodeservicedetection.bean;
+package com.wayyoung.nodeservicedetection.bean.VO;
 
 import lombok.Data;
 
 @Data
-public class NodeServiceBean {
+public class NodeServiceVO {
     /**
      * 服务名
      */
