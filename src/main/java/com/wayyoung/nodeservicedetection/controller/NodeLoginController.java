@@ -6,6 +6,7 @@ import com.wayyoung.nodeservicedetection.bean.VO.NodeVO;
 import com.wayyoung.nodeservicedetection.bean.convertor.NodeConvertor;
 import com.wayyoung.nodeservicedetection.beans.NodeLogInDTO;
 import com.wayyoung.nodeservicedetection.service.NodeLogInService;
+import com.wayyoung.nodeservicedetection.service.NodeManager;
 import com.wayyoung.nodeservicedetection.util.enums.ServiceCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,8 @@ public class NodeLoginController extends BaseController {
    @GetMapping("/Once")
    public ServiceResult<Long> loginOnce(@RequestParam NodeVO body) {
 
-        NodeBean nodeBean= NodeConvertor.vo2Bo(body);
-        long upsert=nodeManager.upsertInLock(NodeBean);
+        NodeBean nodeBean= NodeConvertor.vo2Bo(body);//报文解析
+        long upsert=nodeManager.upsertInLock(nodeBean);//逻辑处理更新
        return success(upsert);
    }
 //   public ServiceResult<Boolean> loginOnce(@RequestParam NodeBean body) {
